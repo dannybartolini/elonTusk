@@ -17,4 +17,6 @@ public class GenreController {
         List<Genre> genres = genreService.getGenres();
         return genres;
     }
+
+
 }

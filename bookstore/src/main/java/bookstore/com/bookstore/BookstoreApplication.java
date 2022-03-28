@@ -1,5 +1,7 @@
 package bookstore.com.bookstore;
 
+import bookstore.com.bookstore.account.Account;
+import bookstore.com.bookstore.account.AccountRepository;
 import bookstore.com.bookstore.genre.Genre;
 import bookstore.com.bookstore.genre.GenreRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,5 +31,12 @@ public class BookstoreApplication /*implements CommandLineRunner */{
 	 	return "Hello there, welcome to Elon Musks's bookstore";
 	 }
 
+//	 @Bean
+//	 CommandLineRunner commandLineRunner(AccountRepository accountRepository) {
+//		return args -> {
+//			Account bobsacc = new Account("bobby@gmail","wow");
+//			accountRepository.save(bobsacc);
+//		};
+//	 }
 
 }

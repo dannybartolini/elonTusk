@@ -1,44 +1,71 @@
 package bookstore.com.bookstore.account;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
+
+import static javax.persistence.GenerationType.SEQUENCE;
 
 @Entity(name = "account")
 @Table
 public class Account {
 
 
+    @SequenceGenerator(
+            name = "account_sequence",
+            sequenceName = "account_sequence",
+            allocationSize = 1
+    )
+    @GeneratedValue(
+            strategy = SEQUENCE,
+            generator = "account_sequence"
+
+    )
     @Column(
             name = "accountid"
     )
     private int accountId;
     @Id
     @Column(
-            name = "name"
+            name = "username"
     )
     private String userName;
 
     @Column(
-            name = "addressid"
+            name = "address"
     )
-    private int addressId;
+    private String address;
 
     @Column(
-            name = "contactid"
+            name = "name"
     )
-    private int contactid;
+    private String name;
+
+    @Column(
+            name = "password"
+    )
+    private String password;
+
+    @Column(
+            name = "paymentmethodid"
+    )
+    private int paymentMethodId;
 
     public Account() {
 
     }
 
-    public Account(int accountId, String userName, int addressId, int contactid) {
-        this.accountId = accountId;
+    public Account( String userName, String password){
+
         this.userName = userName;
-        this.addressId = addressId;
-        this.contactid = contactid;
+        this.password = password;
+    }
+
+    public Account(String userName, String address, String name, String password, int paymentMethodId) {
+
+        this.userName = userName;
+        this.address = address;
+        this.name = name;
+        this.password = password;
+        this.paymentMethodId = paymentMethodId;
     }
 
     public int getAccountId() {
@@ -57,29 +84,48 @@ public class Account {
         this.userName = userName;
     }
 
-    public int getAddressId() {
-        return addressId;
+    public String getAddress() {
+        return address;
     }
 
-    public void setAddressId(int addressId) {
-        this.addressId = addressId;
+    public void setAddress(String address) {
+        this.address = address;
     }
 
-    public int getContactid() {
-        return contactid;
+    public String getName() {
+        return name;
     }
 
-    public void setContactid(int contactid) {
-        this.contactid = contactid;
+    public void setName(String name) {
+        this.name = name;
     }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public int getPaymentMethodId() {
+        return paymentMethodId;
+    }
+
+    public void setPaymentMethodId(int paymentMethodId) {
+        this.paymentMethodId = paymentMethodId;
+    }
+
 
     @Override
     public String toString() {
         return "Account{" +
                 "accountId=" + accountId +
                 ", userName='" + userName + '\'' +
-                ", addressId=" + addressId +
-                ", contactid=" + contactid +
+                ", address='" + address + '\'' +
+                ", name='" + name + '\'' +
+                ", password='" + password + '\'' +
+                ", paymentMethodId=" + paymentMethodId +
                 '}';
     }
 }

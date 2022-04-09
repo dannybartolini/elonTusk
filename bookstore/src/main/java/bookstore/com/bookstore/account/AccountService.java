@@ -26,10 +26,10 @@ public class AccountService {
     }
 
     public void addAccount(Account account) {
-
         accountRepository.save(account);
     }
 
-
-
+    public void updateAccount(String username, Account account){
+        accountRepository.save(account);
+    }
 }

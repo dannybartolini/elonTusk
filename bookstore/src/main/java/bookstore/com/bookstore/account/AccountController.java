@@ -29,4 +29,9 @@ public class AccountController {
         accountService.addAccount(account);
     }
 
+    @RequestMapping(method=RequestMethod.PUT, value="/accounts/{username}")
+    public void updateAccount(@RequestBody Account account, @PathVariable String username) {
+        accountService.updateAccount(username, account);
+    }
+
 }

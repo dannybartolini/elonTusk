@@ -8,7 +8,7 @@ import static javax.persistence.GenerationType.SEQUENCE;
 @Table
 public class Account {
 
-
+    @Id
     @SequenceGenerator(
             name = "account_sequence",
             sequenceName = "account_sequence",
@@ -23,7 +23,7 @@ public class Account {
             name = "accountid"
     )
     private int accountId;
-    @Id
+
     @Column(
             name = "username"
     )

@@ -21,7 +21,6 @@ public class AccountController {
     @RequestMapping("/accounts/{username}")
     public Account getAccount(@PathVariable String username){
         return accountService.getAccount(username);
-
     }
 
     @RequestMapping(method = RequestMethod.POST, value="/accounts")

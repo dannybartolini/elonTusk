@@ -22,7 +22,8 @@ public class AccountService {
     }
 
     public Account getAccount(String username){
-        return accountRepository.findById(username).orElse(null);
+        //return accountRepository.findById(username).orElse(null);
+        return accountRepository.findByUserName(username);
     }
 
     public void addAccount(Account account) {

@@ -1,12 +1,23 @@
 package bookstore.com.bookstore.creditCard;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import javax.persistence.*;
+
+import static javax.persistence.GenerationType.SEQUENCE;
 
 @Entity(name = "paymentmethod")
+@Table
 public class CreditCard {
+
     @Id
+    @SequenceGenerator(
+            name = "paymentmethod_sequence",
+            sequenceName = "paymentmethod_sequence",
+            allocationSize = 1
+    )
+    @GeneratedValue(
+            strategy = SEQUENCE,
+            generator = "paymentmethod_sequence"
+    )
     @Column(
             name = "paymentmethodid"
     )

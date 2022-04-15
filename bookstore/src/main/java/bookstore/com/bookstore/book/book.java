@@ -5,11 +5,11 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
-@Entity(name = "book")
+@Entity (name = "book")
 @Table
 public class book {
 
-    
+  @Id
     @Column(
             name = "bookid"
     )
@@ -19,18 +19,16 @@ public class book {
             name = "authorid"
     )
     private Integer authorId;
-
-    @Id
+    
     @Column(
             name = "genreid"
     )
     private Integer genreId;
     
-
     @Column(
             name = "bookname"
     )
-    private String bookName;
+    private String bookname;
 
     @Column(
             name = "publishdate"
@@ -46,47 +44,284 @@ public class book {
             name = "price"
     )
     private float price;
+ 
+    @Column(
+        name = "genre"
+    )
+    private String genre;
+
+    @Column(
+        name = "amountsold"
+    )
+    private Integer amountSold;
+
+  public book() {
+
+  }
+
+  //constuctor
+  public book(int bookId, String bookname, float price, int authorId,
+      String genre, String publishdate, float rating, Integer amountsold) {
+    this.bookId = bookId;
+    this.bookname = bookname;
+    this.price = price;
+    this.authorId = authorId;
+    this.genre = genre;
+    this.publishdate = publishdate;
+    this.rating = rating;
+    this.amountSold = amountsold;
+  }
+
+  //getters
+//   public int getISBN() {
+//     return ISBN;
+//   }
+
+  public int getBook() {
+    return bookId;
+  }
+
+  public String getBookName() {
+    return bookname;
+  }
+
+  public float getPrice() {
+    return price;
+  }
+
+  public int getAuthor() {
+    return authorId;
+  }
+
+  public String getGenre() {
+    return genre;
+  }
+
+//   public String getPublisher() {
+//     return publisher;
+//   }
+
+  public String getPublishDate() {
+    return publishdate;
+  }
+
+  public int getAmountSold() {
+    return amountSold;
+  }
+
+  public float getRating(){
+      return rating;
+    }
+
+
+  //setters
+//   public void setISBN(int ISBN) {
+//     this.ISBN = ISBN;
+//   }
+
+  public void setBook(int bookId) {
+    this.bookId = bookId;
+  }
+
+  public void setBookName(String bookname) {
+    this.bookname = bookname;
+  }
+
+  public void setPrice(int price) {
+    this.price = price;
+  }
+
+  public void setAuthor(int authorId) {
+    this.authorId = authorId;
+  }
+
+  public void setGenre(String genre) {
+    this.genre = genre;
+  }
+
+//   public void setPublisher(String publisher) {
+//     this.publisher = publisher;
+//   }
+
+  public void setYear(String publishdate) {
+    this.publishdate = publishdate;
+  }
+
+  public void setAmountSold(Integer amountsold) {
+    this.amountSold = amountsold;
+  }
+
+  public void setRating(float rating){
+    this.rating = rating;
+  }
+
+
+  @Override
+  public String toString() {
+    return "Books{" +
+        //"ISBN=" + ISBN +
+        ", bookId='" + bookId + '\'' +
+        ", bookname='" + bookname + '\'' +
+        //", genre='" + genre + '\'' +
+        ", publishdate=" + publishdate + '\'' + 
+        ", price=" + price +
+        ", authorId='" + authorId + '\'' +
+        //", publisher='" + publisher + '\'' +
+        ", rating=" + rating +
+        ", rating=" + amountSold +
+        '}';
+  }
+
+//   "bookId=" + bookId +
+// ", genreId=" + genreId +
+// ", genre=" + genre +
+// ", authorId=" + authorId +
+// ", bookName='" + bookName + '\'' +
+// ", publishdate=" + publishdate +
+// ", rating=" + rating +
+// ", price=" + price +
+// '}';
+}
+
+// package bookstore.com.bookstore.book;
+
+// import javax.persistence.Column;
+// import javax.persistence.Entity;
+// import javax.persistence.Id;
+// import javax.persistence.Table;
+
+// @Entity(name = "book")
+// @Table
+// public class book {
+
+//     @Id
+//     @Column(
+//             name = "bookid"
+//     )
+//     private Integer bookId;
+
+//     @Column(
+//             name = "authorid"
+//     )
+//     private Integer authorId;
+    
+//     @Column(
+//             name = "genreid"
+//     )
+//     private Integer genreId;
     
 
-    public book(){
+//     @Column(
+//             name = "bookname"
+//     )
+//     private String bookName;
 
-    }
+//     @Column(
+//             name = "publishdate"
+//     )
+//     private String publishdate;
 
-    public book(Integer bookId, String bookName) {
-        this.bookId = bookId;
-        this.bookName = bookName;
-    }
+//     @Column(
+//             name = "rating"
+//     )
+//     private float rating;
 
-    public Integer getbookId() {
-        return bookId;
-    }
+//     @Column(
+//             name = "price"
+//     )
+//     private float price;
 
-    public void setbookId(Integer bookId) {
-        this.bookId = bookId;
-    }
+    
+//     @Column(
+//         name = "genre"
+//     )
+//     private String genre;
+    
 
-    public String getbookName() {
-        return bookName;
-    }
+//     public book(){
 
-    public void setbookName(String bookName) {
-        this.bookName = bookName;
-    }
+//     }
 
-    public Integer getgenreId() {
-        return genreId;
-    }
+//     public book(Integer bookId, String bookName) {
+//         this.bookId = bookId;
+//         this.bookName = bookName;
+//     }
 
-    public void setgenreId(Integer genreId) {
-        this.genreId = genreId;
-    }
+//     public Integer getbookId() {
+//         return bookId;
+//     }
 
-    @Override
-    public String toString() {
-        return "book{" +
-                "bookId=" + bookId +
-                ", genreId=" + genreId +
-                ", bookName='" + bookName + '\'' +
-                '}';
-    }
-}
+//     public void setbookId(Integer bookId) {
+//         this.bookId = bookId;
+//     }
+// ///////////////////////////////////////////////////////////////////
+//     public String getbookName() {
+//         return bookName;
+//     }
+
+//     public void setbookName(String bookName) {
+//         this.bookName = bookName;
+//     }
+// //////////////////////////////////////////////////////////////////
+//     public Integer getgenreId() {
+//         return genreId;
+//     }
+
+//     public void setgenreId(Integer genreId) {
+//         this.genreId = genreId;
+//     }
+// //////////////////////////////////////////////////////////////////
+//     public Integer getauthorId() {
+//         return authorId;
+//     }
+
+//     public void setauthorId(Integer authorId) {
+//         this.authorId = authorId;
+//     }
+// /////////////////////////////////////////////////////////////////
+//     public String getpublishdate() {
+//         return publishdate;
+//     }
+
+//     public void setpublishdate(String publishdate) {
+//         this.publishdate = publishdate;
+//     }
+// ////////////////////////////////////////////////////////////////
+//     public Float getrating() {
+//         return rating;
+//     }
+
+//     public void setrating(Float rating) {
+//         this.rating = rating;
+//     }
+// ///////////////////////////////////////////////////////////////
+//     public Float getprice() {
+//         return price;
+//     }
+
+//     public void setprice(Float price) {
+//         this.price = price;
+//     }
+// ///////////////////////////////////////////////////////////////
+//     public String getGenre() {
+//         return genre;
+//     }
+
+//     public void setGenre(String genre) {
+//         this.genre = genre;
+//     }
+
+//     @Override
+//     public String toString() {
+//         return "book{" +
+//                 "bookId=" + bookId +
+//                 ", genreId=" + genreId +
+//                 ", genre=" + genre +
+//                 ", authorId=" + authorId +
+//                 ", bookName='" + bookName + '\'' +
+//                 ", publishdate=" + publishdate +
+//                 ", rating=" + rating +
+//                 ", price=" + price +
+//                 '}';
+//     }
+// }

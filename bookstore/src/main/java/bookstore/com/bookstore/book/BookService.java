@@ -39,9 +39,9 @@ public class BookService {
   }
 
   //top 10
-  public List<book> getTopTen(){
-    return BookRepository.findTop10ByorderByamountsoldDesc();
-  }
+  // public List<book> getTopTen(){
+  //   return BookRepository.findTop10ByamountSold();
+  // }
 
 
 }

@@ -12,7 +12,7 @@ public interface BookRepository extends JpaRepository<book,Integer> {
 
     //List<book> getByAmountSold(Integer amountsold);
 
-    List<book> findTop10ByorderByamountsoldDesc();
+    // List<book> findTop10ByamountSold();
 }
 
 // package bookstore.com.bookstore.book;

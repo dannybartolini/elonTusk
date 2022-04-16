@@ -55,13 +55,30 @@ public class book {
     )
     private Integer amountSold;
 
+    @Column(
+      name = "authorname"
+    )
+    private String authorName;
+
+    @Column(
+      name = "ISBN"
+    )
+    private String ISBN;
+
+    @Column(
+          name = "bookdescription"
+    )
+    private String bookDescription;
+
+
   public book() {
 
   }
 
   //constuctor
   public book(int bookId, String bookname, float price, int authorId,
-      String genre, String publishdate, float rating, Integer amountsold) {
+      String genre, String publishdate, float rating, Integer amountsold,
+      String authorName, String ISBN, String bookDescription) {
     this.bookId = bookId;
     this.bookname = bookname;
     this.price = price;
@@ -70,6 +87,9 @@ public class book {
     this.publishdate = publishdate;
     this.rating = rating;
     this.amountSold = amountsold;
+    this.authorName = authorName;
+    this.ISBN = ISBN;
+    this.bookDescription = bookDescription;
   }
 
   //getters
@@ -155,6 +175,29 @@ public class book {
     this.rating = rating;
   }
 
+  public String getAuthorName() {
+    return authorName;
+  }
+  
+  public void setAuthorName(String authorName) {
+      this.authorName = authorName;
+  }
+
+  public String getISBN() {
+    return ISBN;
+  }
+  
+  public void setISBN(String ISBN) {
+      this.ISBN = ISBN;
+  }
+  
+  public String getBookDescription() {
+      return bookDescription;
+  }
+  
+  public void setBookDescription(String bookDescription) {
+      this.bookDescription = bookDescription;
+  }
 
   @Override
   public String toString() {
@@ -169,6 +212,9 @@ public class book {
         //", publisher='" + publisher + '\'' +
         ", rating=" + rating +
         ", rating=" + amountSold +
+        ", authorName='" + authorName + '\'' +
+        ", ISBN='" + ISBN + '\'' +
+        ", bookDescription='" + bookDescription + '\'' +
         '}';
   }
 

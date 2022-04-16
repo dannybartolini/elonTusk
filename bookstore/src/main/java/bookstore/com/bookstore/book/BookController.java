@@ -53,12 +53,12 @@ public class BookController {
   }
 
     // Must be able to retrieve a list of books associated with an genre.
-    @GetMapping("/books/top10")
-    public List<book> getTop() {
-      //String newString = amountsold.replace("+", " ");
-      return bookService.getTopTen(); // alter
+    // @GetMapping("/books/top10")
+    // public List<book> getTop() {
+    //   //String newString = amountsold.replace("+", " ");
+    //   return bookService.getTopTen(); // alter
   
-    }
+    // }
 
 }
 

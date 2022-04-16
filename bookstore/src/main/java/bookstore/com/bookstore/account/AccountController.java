@@ -21,12 +21,16 @@ public class AccountController {
     @RequestMapping("/accounts/{username}")
     public Account getAccount(@PathVariable String username){
         return accountService.getAccount(username);
-
     }
 
     @RequestMapping(method = RequestMethod.POST, value="/accounts")
     public void addAccount(@RequestBody Account account){
         accountService.addAccount(account);
+    }
+
+    @RequestMapping(method=RequestMethod.PUT, value="/accounts/{username}")
+    public void updateAccount(@RequestBody Account account, @PathVariable String username) {
+        accountService.updateAccount(username, account);
     }
 
 }

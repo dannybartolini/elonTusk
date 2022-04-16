@@ -16,8 +16,8 @@ public class WishListService {
 
 private List<WishList> wishLists = new ArrayList<>(Arrays.asList(  //if there is issue check the name "wishLists" if it's correct
         new WishList(1, "Terrancewishlist", 1, "Romeo and Juliet"),
-         new WishList(1, "Terrancewishlist", 1, "Hamlet"),
-         new WishList(1, "Terrancewishlist", 1, "Macbeth")
+         new WishList(2, "Terrancewishlist", 1, "Hamlet"),
+         new WishList(4, "Brianewishlist", 2, "Macbeth")
 
        ));
 

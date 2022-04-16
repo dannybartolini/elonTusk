@@ -79,5 +79,5 @@ public class WishList {
     }
 }
 //Must have 3 different wish lists
-// might have to change wishlistid and name to bookid and name since they are both referring to the same thing
+// might have to change wishmmlistid and name to bookid and name since they are both referring to the same thing
 //techicanlly speaking

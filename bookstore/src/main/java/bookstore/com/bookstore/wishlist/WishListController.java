@@ -59,7 +59,7 @@ public class WishListController {
         @RequestMapping("/wishlist/{wishlistid}")
         public WishList getwishlistbooks(@PathVariable Integer wishlistid) {
             WishList wishinglist = wishlistService.getWishListBooksFromRepository(wishlistid);
-            return wishinglist;
+            return wishinglist;fefefefe
 
 
 
